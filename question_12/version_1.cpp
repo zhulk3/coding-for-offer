@@ -9,7 +9,7 @@ bool coreFunc(char*matrix,int rows,int cols,char*str,int row,int col,int pathlen
         pathlength++;
         visited[row*cols+col]=true;
         haspath=coreFunc(matrix,rows,cols,str,row+1,col,pathlength,visited)||coreFunc(matrix,rows,cols,str,row-1,col,pathlength,visited)||
-        coreFunc(matrix,rows,cols+1,str,row,col,pathlength,visited)||coreFunc(matrix,rows,cols,str,row,col-1,pathlength,visited);
+        coreFunc(matrix,rows,cols,str,row,col+1,pathlength,visited)||coreFunc(matrix,rows,cols,str,row,col-1,pathlength,visited);
         if(!haspath){
             visited[row*cols+col]=false;
             --pathlength;
